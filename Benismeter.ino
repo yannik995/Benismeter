@@ -124,7 +124,7 @@ void httpRequest() {
   if (client.connect(server, 80)) {
     Serial.println("connecting...");
     // send the HTTP GET request:
-    client.println("GET /api/profile/info?name=" + username + " HTTP/1.1");
+    client.println("GET /api/profile/info?name=" + username + "&self=true HTTP/1.1");
     client.println("Host: pr0gramm.com");
     client.println("User-Agent: arduino-ethernet");
     client.println("Connection: close");
