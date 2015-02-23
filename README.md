@@ -39,10 +39,10 @@ Und an den äußeren Pins 5V und Gnd<br>
 
 <h5>Programmieren:</h5>
 
-Arduino IDE(http://arduino.cc/en/Main/Software) starten und die pr0meter.ino anpassen:
-const String username = "yannik12"; yannik12 durch den eigenen Benutzernamen ersetzen.
+Arduino IDE(http://arduino.cc/en/Main/Software) starten und die pr0meter.ino anpassen:<br>
+const String username = "yannik12"; yannik12 durch den eigenen Benutzernamen ersetzen.<br>
 
-Arduino UNO über USB verbinden.
-In Arduino unter Tools->Boards->Arduino UNO auswählen.
-In Arduino unter Tools->Serieller Port->Den Port des Arduino UNO auswählen.
-Mit STRG+Umschalt+U den Code kompilieren und auf den Arduion hochladen.
+Arduino UNO über USB verbinden.<br>
+In Arduino unter Tools->Boards->Arduino UNO auswählen.<br>
+In Arduino unter Tools->Serieller Port->Den Port des Arduino UNO auswählen.<br>
+Mit STRG+Umschalt+U den Code kompilieren und auf den Arduion hochladen.<br>
