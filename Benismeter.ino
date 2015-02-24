@@ -32,6 +32,7 @@ const String username = "yannik12";            //Pr0gramm Username
 const unsigned int alle_x_sekunden_refrech=30; //Intervall in dem die Infos von Pr0gramm aktualisiert werden sollen
 const unsigned int alle_x_sekunden_wechsel=3;  //Intervall in dem das Display zwischen Benis und Rang wechselt
 const boolean zentriert=false;                 //Boolean der angibt ob der Username, Rang und Benis zentriert dargesetllt werden soll.
+const boolean wechselbenismark = false;        //Ob zwischen Benis und rang gewechselt werden soll
 
 //Ab hier wird es gefährlich
 // Pins für das LCD setze
@@ -44,7 +45,7 @@ byte mac[] = {0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED};
 // initialize the library instance:
 EthernetClient client;
 char server[] = "pr0gramm.com"; 
-//IPAddress server(10,225,156,53);//Adresse des Porxy Servers
+//IPAddress server(10,225,156,53);//Adresse des Proxy Servers
 
 unsigned long lastConnectionTime = 0;          // last time you connected to the server, in milliseconds
 boolean lastConnected = false;                 // state of the connection last time through the main loop
@@ -146,40 +147,44 @@ void draw() {
   lcd.print(setmitte(username));
   
   lcd.setCursor(0, 1);
-  if(drawed){
-    String temp;
-    switch (Mark) {
-      case 0:
-        temp = "Schwuchtel";
-        break;
-      case 1:
-        temp = "Neuschwuchtel";
-        break;
-      case 2:
-        temp = "Altschwuchtel";
-        break;
-      case 3:
-        temp = "Admin";
-        break;
-      case 4:
-        temp = "Gesperrt";
-        break;
-      case 5:
-        temp = "Moderator";
-        break;
-      case 6:
-        temp = "Fliesentischbesitzer";
-        break;
-      case 7:
-        temp = "Lebende Legende";
-        break;
-      case 8:
-        temp = "pr0wichtler";
-        break;
-      default: 
-        temp = "Unknown";
+  if(wechselbenismark){
+    if(drawed){
+      String temp;
+      switch (Mark) {
+        case 0:
+          temp = "Schwuchtel";
+          break;
+        case 1:
+          temp = "Neuschwuchtel";
+          break;
+        case 2:
+          temp = "Altschwuchtel";
+          break;
+        case 3:
+          temp = "Admin";
+          break;
+        case 4:
+          temp = "Gesperrt";
+          break;
+        case 5:
+          temp = "Moderator";
+          break;
+        case 6:
+          temp = "Fliesentischbesitzer";
+          break;
+        case 7:
+          temp = "Lebende Legende";
+          break;
+        case 8:
+          temp = "pr0wichtler";
+          break;
+        default: 
+          temp = "Unknown";
+      }
+      lcd.print(setmitte(temp));
+    }else{
+      lcd.print(setmitte("Benis: " + String(benis)));
     }
-    lcd.print(setmitte(temp));
   }else{
     lcd.print(setmitte("Benis: " + String(benis)));
   }
