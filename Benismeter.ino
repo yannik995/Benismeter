@@ -178,6 +178,9 @@ void draw() {
         case 8:
           temp = "pr0wichtler";
           break;
+        case 9:
+          temp = "Edler Spender";
+          break;
         default: 
           temp = "Unknown";
       }
